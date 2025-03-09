@@ -1,0 +1,46 @@
+.payment-box-title{
+    font-size: 30px;
+    font-weight:600;
+    margin-bottom: 50px;
+}
+.payment-box input{
+    margin-bottom: 15px;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color:rgba(68, 10, 66, 0.838);
+}
+.payment-box label{
+    font-size: 15px;
+
+}
+.payment-box button{
+    border: none;
+    color: white;
+    background-color: rgba(68, 10, 66, 0.838);
+    width: max(23.5vw,200px);
+    padding: 12px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.payment-box ul li{
+    list-style: none;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.payment-box .bothbox input{
+    width: 15%
+}
+.payment-box #country{
+    margin-bottom: 15px;
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color:rgba(68, 10, 66, 0.838);
+}
+ul .card-pic img{
+    height: 50px;
+    width: 200px;
+}
