@@ -8,34 +8,30 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Rajsang - A Modern Web Application
+# Rajsang - A Modern Web Application
 
-🚀 Introduction
+## 🚀 Introduction
 
-Rajsang is a modern web application built with React (Vite) for the frontend and a backend API for handling business logic and data. This project follows best practices for frontend development, including modular components, state management, and Stripe integration for payments.
+Rajsang is a modern web application built with **React (Vite)** for the frontend and a backend API for handling business logic and data. This project follows best practices for frontend development, including modular components, state management, and Stripe integration for payments.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Frontend:
+### Frontend:
 
-React (18.3.1) - UI framework
+- **React** (18.3.1) - UI framework
+- **Vite** - Fast build tool
+- **React Router** (6.26.1) - Client-side routing
+- **Stripe API** - Payment processing
+- **React Icons** - Icons and UI elements
+- **ESLint** - Code quality and linting
 
-Vite - Fast build tool
+### Backend:
 
-React Router (6.26.1) - Client-side routing
+*(Details to be updated based on backend implementation)*
 
-Stripe API - Payment processing
+## 📂 Project Structure
 
-React Icons - Icons and UI elements
-
-ESLint - Code quality and linting
-
-Backend:
-
-(Details to be updated based on backend implementation)
-
-📂 Project Structure
-
+```
 frontend/
 │-- public/          # Static assets
 │-- src/
@@ -49,52 +45,61 @@ frontend/
 │-- .gitignore       # Git ignore rules
 │-- package.json     # Dependencies and scripts
 │-- vite.config.js   # Vite configuration
+```
 
-💻 Getting Started
+## 💻 Getting Started
 
-Prerequisites
+### Prerequisites
 
 Ensure you have the following installed:
 
-Node.js (v16+)
+- Node.js (v16+)
+- npm or yarn
 
-npm or yarn
+### Installation
 
-Installation
-
+```sh
 git clone https://github.com/subhangicodes/Rajsang.git
 cd Rajsang/frontend
 npm install  # or yarn install
+```
 
-Running the App
+### Running the App
 
+```sh
 npm run dev  # Start development server
+```
 
-This starts a local development server, accessible at http://localhost:5173.
+This starts a local development server, accessible at `http://localhost:5173`.
 
-Building for Production
+### Building for Production
 
+```sh
 npm run build
+```
 
 This compiles the project into a production-ready build.
 
-🔑 Environment Variables
+## 🔑 Environment Variables
 
-Create a .env file in the frontend/ directory and add the following variables:
+Create a `.env` file in the `frontend/` directory and add the following variables:
 
+```env
 VITE_API_URL=your_backend_api_url
 VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
+```
 
-📌 Best Practices & Recommendations
+## 📌 Best Practices & Recommendations
 
-Keep dependencies up-to-date (npm outdated to check updates).
+- Keep dependencies up-to-date (`npm outdated` to check updates).
+- Use ESLint to enforce coding standards (`npm run lint`).
+- Store sensitive keys in `.env` (never commit this file).
+- Follow a consistent folder structure for maintainability.
 
-Use ESLint to enforce coding standards (npm run lint).
-
-Store sensitive keys in .env (never commit this file).
-
-Follow a consistent folder structure for maintainability.
-
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
+
+---
+
+Contributions are welcome! 🚀 Feel free to submit issues and pull requests.
