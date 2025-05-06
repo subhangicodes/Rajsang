@@ -1,13 +1,15 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+// Search.jsx
 import React, { useState } from 'react';
-import { assets, food_list } from '../../assets/assets.js';
+import { useNavigate } from 'react-router-dom';
+import { assets, food_list } from '../../assets/assets.js'; // Ensure the path is correct
 import './search.css';
 
 // eslint-disable-next-line react/prop-types
-const SearchProducts = ({ setSearch }) => {
+const Search = ({ setCategory }) => {
   const [query, setQuery] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [selectedProductImage, setSelectedProductImage] = useState(null);
+  const navigate = useNavigate();
 
   // Handle search input change
   const handleSearchChange = (e) => {
@@ -25,25 +27,31 @@ const SearchProducts = ({ setSearch }) => {
 
   // Handle product click
   const handleProductClick = (product) => {
-    setSelectedProductImage(product.image);
+    console.log("Navigating to product:", product); // Debugging line
+    setCategory(product.category); // Set the selected category
+    navigate(`/product/${product._id}`); // Navigate to the product detail page
   };
 
   return (
-    <div className='search'>
-      <div className='search-container'>
+    <div className="search">
+      <div className="search-container">
         <h2>Search Products</h2>
-        <img onClick={() => setSearch(false)} src={assets.cross_icon} alt='' />
+        <img
+          onClick={() => navigate('/')} // Close the search modal and navigate back to the home page
+          src={assets.cross_icon}
+          alt="Close"
+        />
         <input
           type="text"
           placeholder=" Search for products..."
           value={query}
           onChange={handleSearchChange}
         />
-        <div className='search-container-box'>
+        <div className="search-container-box">
           <ul>
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
-                <li key={product.id} onClick={() => handleProductClick(product)}>
+                <li key={product._id} onClick={() => handleProductClick(product)}>
                   <strong>{product.name}</strong>
                 </li>
               ))
@@ -52,14 +60,9 @@ const SearchProducts = ({ setSearch }) => {
             )}
           </ul>
         </div>
-        {selectedProductImage && (
-          <div className='product-image'>
-            <img src={selectedProductImage} alt='Selected Product' />
-          </div>
-        )}
       </div>
     </div>
   );
 };
 
-export default SearchProducts;
+export default Search;

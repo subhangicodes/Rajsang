@@ -5,7 +5,7 @@ import './index.css'
 import StoreContextProvider from './Context/StoreContext.jsx'
 
 createRoot(document.getElementById('root')).render(
- <BrowserRouter>
+ <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
     <StoreContextProvider>
       <App />
     </StoreContextProvider>

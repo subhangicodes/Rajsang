@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
 import './Navbar.css';
@@ -5,7 +6,7 @@ import { assets } from '../../assets/assets';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import { StoreContext } from '../../Context/StoreContext';
-// eslint-disable-next-line react/prop-types
+// eslint-disable-next-line no-unused-vars
 const Navbar = ({setShowLogin,setSearch}) => {
 
     const [menu,setMenu]=useState("home");
@@ -26,7 +27,7 @@ const Navbar = ({setShowLogin,setSearch}) => {
             <Link to='/cart'><img src={assets.basket_icon} alt='' className='basket_icon'/></Link>
             <div className={getTotalCartAmount()===0 ? "":"dot"}></div>
         </div>
-        <button onClick={()=>setShowLogin(true)}>Sign in</button>
+        <Link to="/api/login">Sign in</Link>
      </div>
     </div>
   )

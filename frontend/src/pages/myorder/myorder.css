@@ -1,0 +1,87 @@
+/* myorder.css */
+
+.my-orders {
+  max-width: 1200px; /* Set a maximum width for the orders section */
+  margin: 20px auto; /* Center the orders section */
+  padding: 20px; /* Add padding around the content */
+  background-color: rgba(68, 10, 66, 0.838); /* Light background color with transparency */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px black; /* Subtle shadow for depth */
+  position: relative; /* Position relative for absolute children */
+  overflow: hidden; 
+  
+}
+
+h1 {
+  text-align: center; /* Center the main title */
+  color: white; /* Darker color for the title */
+  margin-bottom: 20px; /* Space below the title */
+  position: relative; /* Position relative for z-index */
+  z-index: 1; /* Bring title above the background */
+}
+
+.orders-list {
+  display: flex; /* Use flexbox for the orders list */
+  flex-direction: column; /* Align items in a column */
+  gap: 20px; /* Space between order items */
+  position: relative; /* Position relative for z-index */
+  z-index: 1; /* Bring orders list above the background */
+}
+
+.order-item {
+  border: 1px solid #ddd; /* Light border around each order */
+  padding: 20px; /* Padding inside each order */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fff; /* White background for each order */
+  box-shadow: 0 1px 5px rgba(68, 10, 66, 0.838); /* Subtle shadow for depth */
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.order-item h2{
+  color: rgba(68, 10, 66, 0.838);
+}
+.order-item .rs{
+  color: tomato;
+}
+.order-item:hover {
+  transform: translateY(-2px); /* Slightly lift the order item on hover */
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between; /* Space between order ID and date */
+  align-items: center; /* Center items vertically */
+  
+}
+
+.order-details {
+  margin-top: 10px; /* Space above order details */
+}
+
+.order-product {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between image and text */
+  margin-bottom: 10px; /* Space below each product */
+  padding: 10px; /* Padding inside each product */
+  border: 1px solid #eee; /* Light border around each product */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f7f7f7; /* Light background for products */
+  transition: background-color 0.2s; /* Smooth transition for background color */
+}
+
+.order-product:hover {
+  background-color: rgba(68, 10, 66, 0.838); /* Change background color on hover */
+}
+
+.product-image {
+  width: 80px; /* Fixed width for product images */
+  height: 80px; /* Fixed height for product images */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px; 
+   border: 2px solid black
+}
+
+strong {
+  color: black; /* Darker color for strong text */
+}

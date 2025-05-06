@@ -79,3 +79,8 @@
     font-weight: 500;
     cursor: pointer;
 }
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}

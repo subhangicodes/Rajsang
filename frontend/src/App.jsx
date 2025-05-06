@@ -1,40 +1,47 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react'
-import { Route, Routes } from 'react-router-dom';
+/* eslint-disable no-unused-vars */
+// App.jsx
+import React, { useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar/navbar';
-import Home from './pages/Home/Home'
+import Home from './pages/Home/Home';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import Cart from './pages/Cart/Cart';
 import Footer from './components/footer/footer';
 import LoginPopUp from './components/loginPopUp/loginPopUp';
-import Payment from './pages/Payment/stripe';
-import Search from './components/Search/search'
-
+import Search from './components/Search/search'; // Ensure the path is correct
+import ProductDetail from './components/ProductDetail/productDetail'; // Ensure the path is correct
+import MyOrder from './pages/myorder/myorder'; // Import for COD page
+import StripePayment from './pages/Payment/stripe'; // Import for Stripe payment page
 
 const App = () => {
+  const [showLogin, setShowLogin] = useState(false);
+  const [category, setCategory] = useState('All');
+  const navigate = useNavigate();
 
-  const [showLogin,setShowLogin]=useState(false);
-  const [showSearch,setSearch]=useState(false);
+  const openSearch = () => {
+    navigate('/search'); // Navigate to the /search route
+  };
+
   return (
     <>
-    {showLogin?<LoginPopUp setShowLogin={setShowLogin} />:<></>}
-    {showSearch?<Search setSearch={setSearch}/>:<></> }
-    <div className='app'>
-      <Navbar setShowLogin={setShowLogin} setSearch={setSearch}/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/order' element={<PlaceOrder/>}/>
-        <Route path='/payment/' element={<Payment/>}>
-            <Route path="cash" element={<cash/>}/>
-            <Route path="stripe" element={<stripe/>}/>
-        </Route>
-      </Routes>
-    </div>
-    <Footer/>
+      {showLogin && <LoginPopUp setShowLogin={setShowLogin} />}
+      <div className="app">
+        <Navbar setShowLogin={setShowLogin} setSearch={openSearch} />
+        <Routes>
+          <Route path="/" element={<Home setCategory={setCategory} />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/api/login" element={<LoginPopUp setShowLogin={setShowLogin} />} />
+          <Route path="/api/register" element={<LoginPopUp setShowLogin={setShowLogin} />} />
+          <Route path="/order" element={<PlaceOrder />} />
+          <Route path="/payment/stripe" element={<StripePayment />} />
+          <Route path="/myorder" element={<MyOrder />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/search" element={<Search setCategory={setCategory} />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
